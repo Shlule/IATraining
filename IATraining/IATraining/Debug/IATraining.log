@@ -1,0 +1,6 @@
+﻿  State.cpp
+  StateMachine.cpp
+  Transition.cpp
+  Génération de code en cours...
+D:\Rogliano_Elouan\IATraining\IATraining\IATraining\StateMachine.cpp(22): warning C4715: 'StateMachine::update' : les chemins de contrôle ne retournent pas tous une valeur
+  IATraining.vcxproj -> D:\Rogliano_Elouan\IATraining\IATraining\Debug\IATraining.exe
