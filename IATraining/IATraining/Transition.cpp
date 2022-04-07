@@ -1,6 +1,7 @@
 #include "Transition.h"
 #include"State.h"
 
+
 bool Transition::isTriggered() const{
 	return false;
 }

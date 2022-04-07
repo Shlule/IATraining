@@ -5,15 +5,15 @@
 class StateMachine
 {
 public:
+	StateMachine(State& initialStateP) : currentState(initialStateP) {}
 	//check and applies transition returning a list of actions
-	Action update();
+	std::vector<Action> update();
 
 
 
 private:
 	std::vector<State> states;
-	State initialState;
-	State CurrentState;
+	State& currentState;
 
 	// pointer de transition qui est cense recuper les pointer des transition trigger
 	Transition* triggeredTransition;

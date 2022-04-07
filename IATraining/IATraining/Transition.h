@@ -6,8 +6,8 @@ class Condition;
 class Transition
 {
 public:
-	Transition(const Action& actionP, Condition* conditionP) :
-		action{ actionP }, condition{ conditionP }{}
+	Transition(Condition* conditionP,const Action& actionP) :
+		action{ actionP }, targetState{ nullptr }, condition{ conditionP }{}
 	bool isTriggered()const;
 	State* getTargetState() const;
 	Action getAction() const;

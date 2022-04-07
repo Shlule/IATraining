@@ -142,7 +142,7 @@
     <ClCompile Include="Action.cpp" />
     <ClCompile Include="Boss.cpp" />
     <ClCompile Include="Condition.cpp" />
-    <ClCompile Include="IATraining.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="StateMachine.cpp" />

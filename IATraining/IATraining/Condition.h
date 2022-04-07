@@ -14,4 +14,27 @@ private:
 	float maxValue;
 	float testValue;
 };
+class SupCondition : public Condition {
+public:
+	SupCondition(int testValueP, int borneValueP);
+	virtual bool test() override;
+private:
+	float borneValue;
+	float testValue;
+};
+class InfCondition : public Condition {
+public:
+	InfCondition(int testValueP, int borneValueP);
+	virtual bool test() override;
+private:
+	float borneValue;
+	float testValue;
+};
 
+class TrueCondition : public Condition
+{
+public: TrueCondition(bool testValep);
+	  virtual bool test() override;
+private:
+	bool  testValue;
+};

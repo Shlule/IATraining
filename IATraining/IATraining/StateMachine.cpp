@@ -1,22 +1,28 @@
 #include "StateMachine.h"
 using namespace std;
 
-Action StateMachine::update() {
+vector<Action> StateMachine::update() {
 	//assume no transition is triggered
-	if (triggeredTransition == nullptr) {
+	triggeredTransition = nullptr;
 
 
-		for (auto& transition : CurrentState.getTransition()) {
-			if (transition->isTriggered()) {
-				triggeredTransition = transition;
-				break;
-			}
+	for (auto& transition : currentState.getTransition()) {
+		if (transition->isTriggered()) {
+			triggeredTransition = transition;
+			break;
 		}
-
+	}
+	if (triggeredTransition != nullptr) {
 		State* targetState = triggeredTransition->getTargetState();
 
+		vector<Action> actions{
+			currentState.getExitAction(),
+			triggeredTransition->getAction(),
+			targetState->getEntryAction()
+		};
+		currentState = *targetState;
+		return actions;
 	}
-	else {
-		return CurrentState.getAction();
-	}
+	return vector<Action>{currentState.getAction()};
 }
+
